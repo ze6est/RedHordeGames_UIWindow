@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace RedHordeGames_UIWindow.CodeBase
 {
@@ -9,16 +10,16 @@ namespace RedHordeGames_UIWindow.CodeBase
         [SerializeField] private Transform _itemContainer;
 
         private List<ItemPresenter> _presenters = new();
-        
-        [SerializeField] private ItemCatalog _catalog;
-
+        private ItemCatalog _catalog;
         private ItemBuyer _buyer;
         private Wallet _wallet;
 
-        public void Construct(ItemBuyer buyer, Wallet wallet)
+        [Inject]
+        public void Construct(ItemBuyer buyer, Wallet wallet, ItemCatalog catalog)
         {
             _buyer = buyer;
             _wallet = wallet;
+            _catalog = catalog;
         }
 
         private void Awake()
