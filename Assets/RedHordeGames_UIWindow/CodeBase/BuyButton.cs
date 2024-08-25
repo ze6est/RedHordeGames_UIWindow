@@ -12,25 +12,17 @@ namespace RedHordeGames_UIWindow.CodeBase
         [SerializeField] private Image _priceIcon;
         [SerializeField] private State _state;
 
-        public void AddListener(UnityAction action)
-        {
+        public void AddListener(UnityAction action) => 
             _button.onClick.AddListener(action);
-        }
 
-        public void RemoveListener(UnityAction action)
-        {
+        public void RemoveListener(UnityAction action) => 
             _button.onClick.RemoveListener(action);
-        }
 
-        public void SetPrice(string price)
-        {
+        public void SetPrice(string price) => 
             _priceText.text = price;
-        }
 
-        public void SetIcon(Sprite icon)
-        {
+        public void SetIcon(Sprite icon) => 
             _priceIcon.sprite = icon;
-        }
 
         public void SetAvailable(bool isAvailable)
         {

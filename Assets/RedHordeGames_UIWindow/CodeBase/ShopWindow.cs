@@ -29,12 +29,8 @@ namespace RedHordeGames_UIWindow.CodeBase
 
         public override void Show()
         {
-            gameObject.SetActive(true);
-            
             foreach (var presenter in _presenters)
-            {
                 presenter.Enable();
-            }
         }
 
         public override void Hide()
@@ -42,9 +38,7 @@ namespace RedHordeGames_UIWindow.CodeBase
             gameObject.SetActive(false);
             
             foreach (var presenter in _presenters)
-            {
                 presenter.Disable();
-            }
         }
         
         private void CreateItems()

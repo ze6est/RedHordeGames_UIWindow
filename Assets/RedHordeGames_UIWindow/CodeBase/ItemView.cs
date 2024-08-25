@@ -13,19 +13,13 @@ namespace RedHordeGames_UIWindow.CodeBase
 
         public BuyButton Button => _button;
 
-        public void SetTitle(string title)
-        {
+        public void SetTitle(string title) => 
             _title.text = title;
-        }
-        
-        public void SetDescription(string description)
-        {
-            _description.text = description;
-        }
 
-        public void SetIcon(Sprite icon)
-        {
+        public void SetDescription(string description) => 
+            _description.text = description;
+
+        public void SetIcon(Sprite icon) => 
             _icon.sprite = icon;
-        }
     }
 }

@@ -8,9 +8,7 @@ namespace RedHordeGames_UIWindow.CodeBase
     {
         public event UnityAction Clicked;
         
-        public void OnPointerUp(PointerEventData eventData)
-        {
+        public void OnPointerUp(PointerEventData eventData) => 
             Clicked?.Invoke();
-        }
     }
 }

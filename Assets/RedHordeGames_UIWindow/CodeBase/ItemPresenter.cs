@@ -45,14 +45,10 @@ namespace RedHordeGames_UIWindow.CodeBase
             }
         }
         
-        private void OnMoneyChanged()
-        {
+        private void OnMoneyChanged() => 
             UpdateButtonState();
-        }
 
-        private void UpdateButtonState()
-        {
+        private void UpdateButtonState() => 
             _itemView.Button.SetAvailable(_buyer.CanBuy(_itemModel));
-        }
     }
 }
