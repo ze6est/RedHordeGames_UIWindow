@@ -55,8 +55,14 @@ namespace RedHordeGames_UIWindow.CodeBase
             {
                 ItemView view = Instantiate(_itemPrefab, _itemContainer);
                 ItemPresenter presenter = new ItemPresenter(view, item, _buyer, _wallet);
+                presenter.ItemBuyed += OnItemBuyed;
                 _presenters.Add(presenter);
             }
         }
+
+        private void OnItemBuyed(ItemView item, ItemPresenter presenter)
+        {
+            item.gameObject.SetActive(false);
+            presenter.ItemBuyed -= OnItemBuyed; }
     }
 }

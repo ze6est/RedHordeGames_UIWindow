@@ -1,3 +1,5 @@
+using UnityEngine.Events;
+
 namespace RedHordeGames_UIWindow.CodeBase
 {
     public class ItemPresenter
@@ -6,6 +8,8 @@ namespace RedHordeGames_UIWindow.CodeBase
         private readonly ItemModel _itemModel;
         private readonly ItemBuyer _buyer;
         private readonly Wallet _wallet;
+
+        public event UnityAction<ItemView, ItemPresenter> ItemBuyed;
 
         public ItemPresenter(ItemView itemView, ItemModel itemModel, ItemBuyer buyer, Wallet wallet)
         {
@@ -37,6 +41,7 @@ namespace RedHordeGames_UIWindow.CodeBase
             if (_buyer.CanBuy(_itemModel))
             {
                 _buyer.Buy(_itemModel);
+                ItemBuyed?.Invoke(_itemView, this);
             }
         }
         
