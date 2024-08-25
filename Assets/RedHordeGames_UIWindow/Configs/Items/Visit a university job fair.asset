@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebce51fc55744beca7cadd5fd1f02674, type: 3}
   m_Name: Visit a university job fair
   m_EditorClassIdentifier: 
-  Title: Matured for longer
-  DescriptionSlim: Blue Cheese profit x3
-  Icon: {fileID: 21300000, guid: 97cbc6a7d6787914b9b073c8e64a31a4, type: 3}
-  Price: 80
+  Title: Visit a university job fair
+  DescriptionSlim: +1 Cashier
+  Icon: {fileID: 21300000, guid: ec53c4a5045e517408d9dcb00496684e, type: 3}
+  Price: 90

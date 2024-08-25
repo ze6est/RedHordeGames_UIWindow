@@ -437,8 +437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c13e07ff62124d845bb02a46d0b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _descriptionBold: {fileID: 6154362791207834954}
-  _descriptionSlim: {fileID: 6794634615373659639}
+  _title: {fileID: 6154362791207834954}
+  _description: {fileID: 6794634615373659639}
   _icon: {fileID: 8038506560994102226}
   _button: {fileID: 5982176374888583713}
 --- !u!1 &2755816896116526252
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 7190035373694306357}
   - component: {fileID: 6794634615373659639}
   m_Layer: 5
-  m_Name: Text_slim
+  m_Name: DescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,8 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 2771034034053054219}
-  _priceText: {fileID: 0}
-  _priceIcon: {fileID: 0}
+  _priceText: {fileID: 7476566779187816578}
+  _priceIcon: {fileID: 5380974235367822567}
   _state: 0
 --- !u!1 &7524246114887498987
 GameObject:
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 2865252831407089004}
   - component: {fileID: 6154362791207834954}
   m_Layer: 5
-  m_Name: Text_bold
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
