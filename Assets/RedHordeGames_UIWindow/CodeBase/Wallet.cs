@@ -9,6 +9,7 @@ namespace RedHordeGames_UIWindow.CodeBase
 
         public void SpendMoney(float itemPrice)
         {
+            Money -= itemPrice;
             MoneyChanged?.Invoke();
         }
     }
