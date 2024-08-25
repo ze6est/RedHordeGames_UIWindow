@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Windows
 {
     public abstract class Window : MonoBehaviour
     {

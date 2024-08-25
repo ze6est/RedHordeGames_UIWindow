@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Items
 {
     public class BuyButton : MonoBehaviour
     {

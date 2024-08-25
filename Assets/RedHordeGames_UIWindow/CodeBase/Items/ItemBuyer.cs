@@ -1,4 +1,4 @@
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Items
 {
     public class ItemBuyer
     {

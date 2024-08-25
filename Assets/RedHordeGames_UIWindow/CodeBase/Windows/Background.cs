@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Windows
 {
     public class Background : MonoBehaviour, IPointerUpHandler
     {

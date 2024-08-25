@@ -1,9 +1,8 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Windows
 {
     public class WindowManager : MonoBehaviour
     {

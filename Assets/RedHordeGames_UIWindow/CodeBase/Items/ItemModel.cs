@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Items
 {
     [CreateAssetMenu(menuName = "Create Item", fileName = "Item", order = 51)]
     public class ItemModel : ScriptableObject

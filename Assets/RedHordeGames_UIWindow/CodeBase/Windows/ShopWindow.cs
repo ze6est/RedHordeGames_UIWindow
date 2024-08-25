@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using RedHordeGames_UIWindow.CodeBase.Items;
 using UnityEngine;
 using Zenject;
 
-namespace RedHordeGames_UIWindow.CodeBase
+namespace RedHordeGames_UIWindow.CodeBase.Windows
 {
     public class ShopWindow : Window
     {
