@@ -1080,11 +1080,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c640aee6dc88084cacf7440b39600e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 7968419539396227059, guid: 501f280ee1b71fd459ed0c5424546a89, type: 3}
   _catalog: {fileID: 11400000, guid: c0f0380383e51fc4aa3f095018e90435, type: 2}
-  _windowView: {fileID: 1126295482}
-  _windowModel: {fileID: 11400000, guid: ea552737c2b9edf488f4ef6d4747a20b, type: 2}
+  _itemPrefab: {fileID: 7968419539396227059, guid: 501f280ee1b71fd459ed0c5424546a89, type: 3}
+  upgradesWindowView: {fileID: 1126295482}
+  upgradesWindowModel: {fileID: 11400000, guid: ea552737c2b9edf488f4ef6d4747a20b, type: 2}
   _background: {fileID: 1357093827}
+  _itemUpgradesContainer: {fileID: 858613586}
   _upgradesOpenButton: {fileID: 1084570105}
 --- !u!1 &1838178782
 GameObject:
