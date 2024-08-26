@@ -16,6 +16,9 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow
         [SerializeField] private ItemCatalog _catalog;
         [SerializeField] private GameObject _menu;
         [SerializeField] private Transform _content;
+        [Header("Animation Settings")]
+        [SerializeField] private float _startSize = 80;
+        [SerializeField] private float _springDuration = 1f;
         
         private List<ItemPresenter> _presenters = new();
         private ItemViewFactory _itemViewFactory;
@@ -39,8 +42,9 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow
         public void Show()
         {
             gameObject.SetActive(true);
-            _menu.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
-            _menu.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack);
+            float size = _startSize / 100;
+            _menu.transform.localScale = new Vector3(size, size, 1f);
+            _menu.transform.DOScale(Vector3.one, _springDuration).SetEase(Ease.OutBack);
             
             foreach (var presenter in _presenters)
                 presenter.Enable();

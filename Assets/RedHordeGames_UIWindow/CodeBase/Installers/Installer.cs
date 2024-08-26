@@ -5,7 +5,6 @@ using RedHordeGames_UIWindow.CodeBase.Windows;
 using RedHordeGames_UIWindow.CodeBase.Windows.MainWindow;
 using RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace RedHordeGames_UIWindow.CodeBase.Installers
