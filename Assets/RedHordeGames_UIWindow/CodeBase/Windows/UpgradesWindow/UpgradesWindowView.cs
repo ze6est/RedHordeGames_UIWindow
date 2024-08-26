@@ -4,6 +4,7 @@ using RedHordeGames_UIWindow.CodeBase.Factories.Items;
 using RedHordeGames_UIWindow.CodeBase.Items;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -15,6 +16,7 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow
         [SerializeField] private Button _closeButton;
         [SerializeField] private ItemCatalog _catalog;
         [SerializeField] private GameObject _menu;
+        [SerializeField] private Transform _content;
         
         private List<ItemPresenter> _presenters = new();
         private ItemViewFactory _itemViewFactory;
@@ -59,7 +61,7 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow
 
             foreach (ItemModel item in items)
             {
-                ItemView view = _itemViewFactory.Create();
+                ItemView view = _itemViewFactory.Create(_content);
                 ItemPresenter presenter = _itemPresenterFactory.Create(view, item);
                 presenter.ItemBuyed += OnItemBuyed;
                 _presenters.Add(presenter);
