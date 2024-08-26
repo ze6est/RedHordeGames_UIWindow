@@ -2,6 +2,7 @@ using RedHordeGames_UIWindow.CodeBase.Factories.Items;
 using RedHordeGames_UIWindow.CodeBase.Factories.Windows;
 using RedHordeGames_UIWindow.CodeBase.Items;
 using RedHordeGames_UIWindow.CodeBase.Windows;
+using RedHordeGames_UIWindow.CodeBase.Windows.MainWindow;
 using RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,22 +14,24 @@ namespace RedHordeGames_UIWindow.CodeBase.Installers
     {
         [Header("Items")]
         [SerializeField] private ItemView _itemPrefab;
-        [Header("Windows")]
-        [SerializeField] private UpgradesWindowView upgradesWindowView;
-        [SerializeField] private UpgradesWindowModel upgradesWindowModel;
+
+        [Header("Windows")] 
+        [SerializeField] private MainWindowView _mainWindowView;
+        [SerializeField] private UpgradesWindowView _upgradesWindowView;
+        [SerializeField] private UpgradesWindowModel _upgradesWindowModel;
         [SerializeField] private Background _background;
-        [SerializeField] private Button _upgradesOpenButton;
 
         private ItemBuyer _buyer;
         private Wallet _wallet;
 
         public override void InstallBindings()
         {
-            Container.Bind<UpgradesWindowView>().FromInstance(upgradesWindowView);
-            Container.Bind<UpgradesWindowModel>().FromInstance(upgradesWindowModel);
+            Container.Bind<MainWindowView>().FromInstance(_mainWindowView);
+            Container.Bind<UpgradesWindowView>().FromInstance(_upgradesWindowView);
+            Container.Bind<UpgradesWindowModel>().FromInstance(_upgradesWindowModel);
             Container.Bind<Background>().FromInstance(_background);
             
-            Container.Bind<WindowsManager>().AsSingle().WithArguments(_upgradesOpenButton).NonLazy();
+            Container.Bind<WindowsManager>().AsSingle().NonLazy();
             
             Container.Bind<ItemBuyer>().AsSingle().NonLazy();
             
