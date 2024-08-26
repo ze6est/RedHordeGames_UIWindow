@@ -7,18 +7,18 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows
 {
     public class WindowsManager : IDisposable
     {
-        private UpgradesWindowPresenter _upgradesWindowPresenter;
         private UpgradesWindowView _upgradesWindowView;
         private Background _background;
         
         private Button _upgradesOpenButton;
         private Button _shopCloseButton;
 
-        public WindowsManager(UpgradesWindowView upgradesWindowView, Background background, Button upgradesOpenButton,
-            UpgradesWindowPresenterFactory presenterFactory)
+        public WindowsManager(UpgradesWindowView upgradesWindowView, Background background, Button upgradesOpenButton, 
+            UpgradesWindowPresenterFactory upgradesWindowPresenterFactory)
         {
-            _upgradesWindowPresenter = presenterFactory.Create();
             _upgradesWindowView = upgradesWindowView;
+            UpgradesWindowPresenter upgradesWindowPresenter = upgradesWindowPresenterFactory.Create();
+            upgradesWindowPresenter.Init();
             
             _background = background;
             _upgradesOpenButton = upgradesOpenButton;
@@ -37,16 +37,10 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows
             _background.Clicked -= HideWindow;
         }
 
-        private void ShowWindow()
-        {
-            _background.gameObject.SetActive(true);
-            _upgradesWindowPresenter.Show();
-        }
+        private void ShowWindow() => 
+            _upgradesWindowView.Show();
 
-        private void HideWindow()
-        {
-            _upgradesWindowPresenter.Hide();
-            _background.gameObject.SetActive(false);
-        }
+        private void HideWindow() => 
+            _upgradesWindowView.Hide();
     }
 }
