@@ -18,33 +18,34 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows
             Background background, UpgradesWindowPresenterFactory upgradesWindowPresenterFactory)
         {
             _mainWindow = mainWindow;
+            _mainWindow.UpgradesOpenButtonClick.AddListener(ShowUpgrades);
+            
             _upgradesWindowView = upgradesWindowView;
+            _upgradesWindowView.CloseButtonClick.AddListener(ShowMain);
+            
             UpgradesWindowPresenter upgradesWindowPresenter = upgradesWindowPresenterFactory.Create();
             upgradesWindowPresenter.Init();
             
             _background = background;
+            _background.Clicked += ShowMain;
             
-            HideWindow();
-            
-            _mainWindow.UpgradesOpenButton.onClick.AddListener(ShowWindow);
-            _upgradesWindowView.CloseButton.onClick.AddListener(HideWindow);
-            _background.Clicked += HideWindow;
+            ShowMain();
         }
         
         public void Dispose()
         {
-            _mainWindow.UpgradesOpenButton.onClick.RemoveListener(ShowWindow);
-            _shopCloseButton.onClick.RemoveListener(HideWindow);
-            _background.Clicked -= HideWindow;
+            _mainWindow.UpgradesOpenButtonClick.RemoveListener(ShowUpgrades);
+            _shopCloseButton.onClick.RemoveListener(ShowMain);
+            _background.Clicked -= ShowMain;
         }
 
-        private void ShowWindow()
+        private void ShowUpgrades()
         {
             _upgradesWindowView.Show();
             _mainWindow.Hide();
         }
 
-        private void HideWindow()
+        private void ShowMain()
         {
             _mainWindow.Show();
             _upgradesWindowView.Hide();

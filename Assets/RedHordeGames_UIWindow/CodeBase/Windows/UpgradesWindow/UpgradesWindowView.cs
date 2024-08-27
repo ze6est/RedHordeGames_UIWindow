@@ -16,6 +16,7 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow
         [SerializeField] private ItemCatalog _catalog;
         [SerializeField] private GameObject _menu;
         [SerializeField] private Transform _content;
+        
         [Header("Animation Settings")]
         [SerializeField] private float _startSize = 80;
         [SerializeField] private float _springDuration = 1f;
@@ -24,7 +25,7 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.UpgradesWindow
         private ItemViewFactory _itemViewFactory;
         private ItemPresenterFactory _itemPresenterFactory;
 
-        public Button CloseButton => _closeButton;
+        public Button.ButtonClickedEvent CloseButtonClick => _closeButton.onClick;
 
         [Inject]
         public void Construct(ItemViewFactory itemViewFactory, ItemPresenterFactory itemPresenterFactory)

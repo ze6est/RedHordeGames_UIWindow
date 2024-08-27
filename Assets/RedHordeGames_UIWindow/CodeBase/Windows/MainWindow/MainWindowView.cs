@@ -5,9 +5,9 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows.MainWindow
 {
     public class MainWindowView : MonoBehaviour, IWindow
     {
-        [SerializeField] private Button _upgradesOpenButton;
+        [SerializeField] private Button _upgradesOpenButtonClick;
 
-        public Button UpgradesOpenButton => _upgradesOpenButton;
+        public Button.ButtonClickedEvent UpgradesOpenButtonClick => _upgradesOpenButtonClick.onClick;
         
         public void Show()
         {
