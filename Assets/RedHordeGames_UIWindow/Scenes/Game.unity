@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8130d22330a4c7e88780883e1210501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradesOpenButton: {fileID: 1084570105}
+  _upgradesOpenButtonClick: {fileID: 1084570105}
 --- !u!1 &2121362558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4648825142734599493, guid: 971c4258a7e74f6448d651739e4b33f0, type: 3}

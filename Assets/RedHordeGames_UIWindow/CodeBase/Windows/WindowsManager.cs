@@ -8,47 +8,45 @@ namespace RedHordeGames_UIWindow.CodeBase.Windows
 {
     public class WindowsManager : IDisposable
     {
-        private MainWindowView _mainWindow;
-        private UpgradesWindowView _upgradesWindowView;
         private Background _background;
-        
+        private UpgradesWindowPresenter _upgradesWindowPresenter;
+        private MainWindowPresenter _mainWindowPresenter;
+
         private Button _shopCloseButton;
 
-        public WindowsManager(MainWindowView mainWindow, UpgradesWindowView upgradesWindowView, 
-            Background background, UpgradesWindowPresenterFactory upgradesWindowPresenterFactory)
+        public WindowsManager(Background background, UpgradesWindowPresenterFactory upgradesWindowPresenterFactory, 
+            MainWindowPresenterFactory mainWindowPresenterFactory)
         {
-            _mainWindow = mainWindow;
-            _mainWindow.UpgradesOpenButtonClick.AddListener(ShowUpgrades);
-            
-            _upgradesWindowView = upgradesWindowView;
-            _upgradesWindowView.CloseButtonClick.AddListener(ShowMain);
-            
-            UpgradesWindowPresenter upgradesWindowPresenter = upgradesWindowPresenterFactory.Create();
-            upgradesWindowPresenter.Init();
-            
+            _mainWindowPresenter = mainWindowPresenterFactory.Create();
+            _mainWindowPresenter.UpgradesOpenButtonClick.AddListener(ShowUpgrades);
+
+            _upgradesWindowPresenter = upgradesWindowPresenterFactory.Create();
+            _upgradesWindowPresenter.Init();
+            _upgradesWindowPresenter.CloseButtonClick.AddListener(ShowMain);
+
             _background = background;
             _background.Clicked += ShowMain;
-            
+
             ShowMain();
         }
-        
+
         public void Dispose()
         {
-            _mainWindow.UpgradesOpenButtonClick.RemoveListener(ShowUpgrades);
+            _mainWindowPresenter.UpgradesOpenButtonClick.RemoveListener(ShowUpgrades);
             _shopCloseButton.onClick.RemoveListener(ShowMain);
             _background.Clicked -= ShowMain;
         }
 
         private void ShowUpgrades()
         {
-            _upgradesWindowView.Show();
-            _mainWindow.Hide();
+            _upgradesWindowPresenter.ShowWindow();
+            _mainWindowPresenter.HideWindow();
         }
 
         private void ShowMain()
         {
-            _mainWindow.Show();
-            _upgradesWindowView.Hide();
+            _mainWindowPresenter.ShowWindow();
+            _upgradesWindowPresenter.HideWindow();
         }
     }
 }

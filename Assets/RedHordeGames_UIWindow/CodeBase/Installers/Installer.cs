@@ -38,6 +38,7 @@ namespace RedHordeGames_UIWindow.CodeBase.Installers
 
             Container.Bind<ItemViewFactory>().AsSingle().WithArguments(_itemPrefab);
             Container.Bind<ItemPresenterFactory>().AsSingle();
+            Container.Bind<MainWindowPresenterFactory>().AsSingle();
             Container.Bind<UpgradesWindowPresenterFactory>().AsSingle();
         }
     }
